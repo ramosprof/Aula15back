@@ -39,7 +39,7 @@ export class FilmeController{
     async findById(req: Request, res: Response)
     {
         const id = Number(req.params.id);
-        const filme = filmeService.findById(id);
+        const filme = await filmeService.findById(id);
         res.status(200).json(filme);
     }
 
